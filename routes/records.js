@@ -213,27 +213,6 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-// POST Overload (Is wrong needs to be PATCH)
-// router.post("/:id/favorite", async (req, res) => {
-//     const {id} = req.params;
-//
-//     if (!isValidObjectId(id)) {
-//         return res.status(404).json({message: "Record not found"});
-//     }
-//
-//     try {
-//         const record = await Record.findById(id);
-//         if (!record) return res.status(404).json({message: "Record not found"});
-//
-//         record.favorite = !record.favorite;
-//         await record.save();
-//
-//         res.status(200).json(record);
-//     } catch (e) {
-//         res.status(500).json({error: e.message});
-//     }
-// });
-
 // PATCH for the frontend (button was not working, problem is /favorite)
 router.patch("/:id/favorite", async (req, res) => {
     const {id} = req.params;
